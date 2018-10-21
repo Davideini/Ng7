@@ -1,6 +1,8 @@
 const fs = require('fs-extra');
 const concat = require('concat');
 const shell = require('shelljs');
+const { camelCase } = require('change-case');
+const replace = require('replace-in-file');
 
 const projects = ['first-element', 'second-element'];
 
@@ -24,6 +26,12 @@ const projects = ['first-element', 'second-element'];
             `./dist/${project}/styles.css`,
             `elements/${project}/styles.css`
         );
+
+        await replace({
+            files: `elements/${project}/${project}.js`,
+            from: /webpackJsonp/g,
+            to: `webpackJsonp_${camelCase(project)}`
+          })
 
     })
 

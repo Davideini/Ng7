@@ -12,10 +12,12 @@ import { createCustomElement } from '@angular/elements';
 })
 export class AppModule { 
   constructor(private injector: Injector) {
-    const el = createCustomElement(AppComponent, { injector });
-    customElements.define('second-element', el);
+
   }
 
-  ngDoBootstrap() {}
+  ngDoBootstrap() {
+    const el = createCustomElement(AppComponent, { injector: this.injector });
+    customElements.define('second-element', el);
+  }
 
 }

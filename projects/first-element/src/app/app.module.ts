@@ -3,6 +3,7 @@ import { NgModule, Injector } from '@angular/core';
 import { createCustomElement } from '@angular/elements';
 
 import { AppComponent } from './app.component';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 @NgModule({
   imports: [BrowserModule],
@@ -12,10 +13,12 @@ import { AppComponent } from './app.component';
 })
 export class AppModule { 
   constructor(private injector: Injector) {
-    const el = createCustomElement(AppComponent, { injector });
-    customElements.define('first-element', el);
+
   }
 
-  ngDoBootstrap() {}
+  ngDoBootstrap() {
+    const el = createCustomElement(AppComponent, { injector: this.injector });
+    customElements.define('first-element', el);
+  }
 
 }
