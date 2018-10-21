@@ -30,7 +30,11 @@
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              {
+                "input": "node_modules/document-register-element/build/document-register-element.js"
+              }
+            ]
           },
           "configurations": {
             "production": {
@@ -156,9 +160,14 @@
               "projects/first-element/src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "projects/first-element/src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              {
+                "input": "node_modules/document-register-element/build/document-register-element.js"
+              }
+            ]
           },
           "configurations": {
             "production": {
@@ -212,9 +221,14 @@
             "tsConfig": "projects/first-element/tsconfig.spec.json",
             "karmaConfig": "projects/first-element/karma.conf.js",
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "projects/first-element/src/styles.css"
             ],
-            "scripts": [],
+            "scripts": [
+              {
+                "input": "node_modules/document-register-element/build/document-register-element.js"
+              }
+            ],
             "assets": [
               "projects/first-element/src/favicon.ico",
               "projects/first-element/src/assets"
