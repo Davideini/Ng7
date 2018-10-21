@@ -161,7 +161,7 @@
             ],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-              "projects/first-element/src/styles.css"
+              "projects/first-element/src/styles.scss"
             ],
             "scripts": [
               {
@@ -221,14 +221,9 @@
             "tsConfig": "projects/first-element/tsconfig.spec.json",
             "karmaConfig": "projects/first-element/karma.conf.js",
             "styles": [
-              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-              "projects/first-element/src/styles.css"
+              "projects/first-element/src/styles.scss"
             ],
-            "scripts": [
-              {
-                "input": "node_modules/document-register-element/build/document-register-element.js"
-              }
-            ],
+            "scripts": [            ],
             "assets": [
               "projects/first-element/src/favicon.ico",
               "projects/first-element/src/assets"
@@ -297,9 +292,14 @@
               "projects/second-element/src/assets"
             ],
             "styles": [
-              "projects/second-element/src/styles.css"
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "projects/second-element/src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              {
+                "input": "node_modules/document-register-element/build/document-register-element.js"
+              }
+            ]
           },
           "configurations": {
             "production": {
@@ -353,7 +353,7 @@
             "tsConfig": "projects/second-element/tsconfig.spec.json",
             "karmaConfig": "projects/second-element/karma.conf.js",
             "styles": [
-              "projects/second-element/src/styles.css"
+              "projects/second-element/src/styles.scss"
             ],
             "scripts": [],
             "assets": [
