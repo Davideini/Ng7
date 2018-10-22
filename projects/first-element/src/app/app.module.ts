@@ -1,8 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, Injector, ComponentFactoryResolver } from '@angular/core';
+import { NgModule, Injector } from '@angular/core';
 import { AppComponent } from './app.component';
-import { AngularCustomElementBridge } from 'elements-lib';
-import { AppElement } from './app.element';
+import { createCustomElement } from '@angular/elements';
 
 @NgModule({
   imports: [BrowserModule],
@@ -10,19 +9,10 @@ import { AppElement } from './app.element';
   entryComponents: [AppComponent]
 })
 export class AppModule {
-  constructor(private injector: Injector) {
-
-    const bridge = new AngularCustomElementBridge<AppComponent>(this.injector, AppComponent);
-
-    this.injector.get(ComponentFactoryResolver).resolveComponentFactory(AppComponent).inputs
-      .forEach(input => AppElement.attributes.push(input.templateName));
-
-    AppElement.bridge = bridge;
-
-
-  }
+  constructor(private injector: Injector) {  }
 
   ngDoBootstrap() {
-    customElements.define('first-element', AppElement);
+    const el = createCustomElement(AppComponent, { injector: this.injector });
+    customElements.define('first-element', el);
   }
 }

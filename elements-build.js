@@ -9,7 +9,8 @@ const projects = ['first-element', 'second-element'];
 (async function build() {
     await projects.forEach(async project => {
 
-        shell.exec(`ng build ${project} --prod --output-hashing none`)
+        //--prod  --preserve-symlinks
+        shell.exec(`ng build ${project} --prod  --aot --extract-css --output-hashing none`)
 
         const files = [
             `./dist/${project}/runtime.js`,

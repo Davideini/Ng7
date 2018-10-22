@@ -13,14 +13,21 @@
 
 <body>
 
-    <first-element></first-element>
+    <first-element input-text="first-element"></first-element>
     
-    <second-element></second-element>
+    <second-element input-text="first-element" ontest="javascript:console.log('test')"></second-element>
 
     <script src="./zone.js"></script>
 
     <script src="./first-element/first-element.js"></script>
     <script src="./second-element/second-element.js"></script>
+
+    <script>
+        const el = document.querySelector('second-element');
+
+        el.addEventListener('test', (event)=> console.log('test:', event));
+    
+    </script>
 
 </body>
 
