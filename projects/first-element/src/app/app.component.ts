@@ -11,11 +11,15 @@ export class AppComponent implements OnInit {
 
   @Input() inputText: string;
 
+  @Output() test = new EventEmitter();
   @Output() ontest = new EventEmitter();
+  @Output() onTest = new EventEmitter();
 
   ngOnInit() {
 
+    interval(1000).subscribe(next => this.test.emit(next));
     interval(1000).subscribe(next => this.ontest.emit(next));
+    interval(1000).subscribe(next => this.onTest.emit(next));
 
   }
 

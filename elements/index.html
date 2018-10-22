@@ -14,8 +14,8 @@
 <body>
 
     <first-element input-text="first-element"></first-element>
-    
-    <second-element input-text="first-element" ontest="javascript:console.log('test')"></second-element>
+
+    <second-element input-text="first-element"></second-element>
 
     <script src="./zone.js"></script>
 
@@ -25,8 +25,8 @@
     <script>
         const el = document.querySelector('second-element');
 
-        el.addEventListener('test', (event)=> console.log('test:', event));
-    
+        el.addEventListener('test', (event) => console.log('test:', event));
+
     </script>
 
 </body>
