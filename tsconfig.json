@@ -16,6 +16,18 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "elements-lib": [
+        "dist/elements-lib",
+        "../dist/elements-lib",
+        "../../dist/elements-lib"
+      ],
+      "elements-lib/*": [
+        "dist/elements-lib/*",
+        "../dist/elements-lib/*",
+        "../../dist/elements-lib/*"
+      ]
+    }
   }
 }

@@ -223,7 +223,7 @@
             "styles": [
               "projects/first-element/src/styles.scss"
             ],
-            "scripts": [            ],
+            "scripts": [],
             "assets": [
               "projects/first-element/src/favicon.ico",
               "projects/first-element/src/assets"
@@ -397,6 +397,41 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": "projects/second-element-e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "elements-lib": {
+      "root": "projects/elements-lib",
+      "sourceRoot": "projects/elements-lib/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/elements-lib/tsconfig.lib.json",
+            "project": "projects/elements-lib/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/elements-lib/src/test.ts",
+            "tsConfig": "projects/elements-lib/tsconfig.spec.json",
+            "karmaConfig": "projects/elements-lib/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/elements-lib/tsconfig.lib.json",
+              "projects/elements-lib/tsconfig.spec.json"
+            ],
             "exclude": [
               "**/node_modules/**"
             ]

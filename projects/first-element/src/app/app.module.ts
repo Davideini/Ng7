@@ -1,24 +1,28 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, Injector } from '@angular/core';
-import { createCustomElement } from '@angular/elements';
-
+import { NgModule, Injector, ComponentFactoryResolver } from '@angular/core';
 import { AppComponent } from './app.component';
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+import { AngularCustomElementBridge } from 'elements-lib';
+import { AppElement } from './app.element';
 
 @NgModule({
   imports: [BrowserModule],
   declarations: [AppComponent],
-  providers: [],
   entryComponents: [AppComponent]
 })
-export class AppModule { 
+export class AppModule {
   constructor(private injector: Injector) {
+
+    const bridge = new AngularCustomElementBridge<AppComponent>(this.injector, AppComponent);
+
+    this.injector.get(ComponentFactoryResolver).resolveComponentFactory(AppComponent).inputs
+      .forEach(input => AppElement.attributes.push(input.templateName));
+
+    AppElement.bridge = bridge;
+
 
   }
 
   ngDoBootstrap() {
-    const el = createCustomElement(AppComponent, { injector: this.injector });
-    customElements.define('first-element', el);
+    customElements.define('first-element', AppElement);
   }
-
 }
