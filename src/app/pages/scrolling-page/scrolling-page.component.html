@@ -1,0 +1,11 @@
+<p>
+  scrolling-page works!
+</p>
+
+<cdk-virtual-scroll-viewport [itemSize]="30" class="example-viewport">
+
+  <app-test-scrolling-item *cdkVirtualFor="let item of items; let i = index" [index]="i" [item]="item">
+
+  </app-test-scrolling-item>
+
+</cdk-virtual-scroll-viewport>

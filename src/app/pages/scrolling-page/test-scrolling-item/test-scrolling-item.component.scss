@@ -1,0 +1,14 @@
+:host {
+  display: block;
+  min-height: 20px;
+
+  &.color-0 {
+    background: yellowgreen;
+    height: 30px;
+}
+
+  &.color-1 {
+    background: yellow;
+    height: 40px;
+}
+}
