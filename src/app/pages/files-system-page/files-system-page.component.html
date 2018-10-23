@@ -1,0 +1,12 @@
+<mat-card>
+
+  <button mat-raised-button>Add File</button>
+  <button mat-raised-button>Add Folder</button>
+
+</mat-card>
+
+<mat-card class="flex">
+
+  <app-file-item *ngFor="let item of files" [file]="item" cdkDrag (cdkDragEnded)="ended($event)"></app-file-item>
+
+</mat-card>

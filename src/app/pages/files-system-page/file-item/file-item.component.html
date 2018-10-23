@@ -1,0 +1,8 @@
+<mat-card>
+
+  <mat-icon *ngIf="file.type === 'file'">description</mat-icon>
+  <mat-icon *ngIf="file.type === 'folder'">folder</mat-icon>
+  <label [innerText]="file.name"></label>
+      
+
+</mat-card>
