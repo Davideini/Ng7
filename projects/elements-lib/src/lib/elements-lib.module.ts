@@ -2,8 +2,7 @@ import { NgModule } from '@angular/core';
 import { ElementsLibComponent } from './elements-lib.component';
 
 @NgModule({
-  imports: [
-  ],
+  imports: [],
   declarations: [ElementsLibComponent],
   exports: [ElementsLibComponent]
 })

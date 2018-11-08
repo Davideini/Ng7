@@ -2,9 +2,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Injector } from '@angular/core';
 import { AppComponent } from './app.component';
 import { createCustomElement } from '@angular/elements';
+import { ElementsLibModule } from 'elements-lib';
 
 @NgModule({
-  imports: [BrowserModule],
+  imports: [BrowserModule, ElementsLibModule],
   declarations: [AppComponent],
   entryComponents: [AppComponent]
 })
