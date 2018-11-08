@@ -4,13 +4,13 @@ const shell = require('shelljs');
 const { camelCase } = require('change-case');
 const replace = require('replace-in-file');
 
+// projects to build
 const projects = ['first-element', 'second-element'];
 
 (async function build() {
     await projects.forEach(async project => {
 
-        //--prod  --preserve-symlinks
-        shell.exec(`ng build ${project} --prod  --aot --extract-css --output-hashing none`)
+        shell.exec(`ng build ${project} --prod --aot --extract-css --output-hashing none`)
 
         const files = [
             `./dist/${project}/runtime.js`,
