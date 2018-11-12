@@ -27,6 +27,12 @@
         "dist/elements-lib/*",
         "../dist/elements-lib/*",
         "../../dist/elements-lib/*"
+      ],
+      "test-web-lib": [
+        "dist/test-web-lib"
+      ],
+      "test-web-lib/*": [
+        "dist/test-web-lib/*"
       ]
     }
   }

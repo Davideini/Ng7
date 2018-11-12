@@ -1,7 +1,6 @@
 {
   "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
-  "dest": "../../dist/elements-lib",
-  "deleteDestPath": false,
+  "dest": "../../dist/test-web-lib",
   "lib": {
     "entryFile": "src/public_api.ts"
   }
